@@ -1,3 +1,4 @@
+# Imports
 import pandas as pd
 import seaborn as sns
 import numpy as np
@@ -7,26 +8,31 @@ from scipy import stats
 
 warnings.filterwarnings("ignore")
 
+# Daten werden eingelesen
 crimes_dataset = pd.read_csv("data/Crimes_Dataset.csv")
 suspect_dataset = pd.read_csv("data/Suspects_Dataset.csv")
 
-
-# Alle Zeichenfolgen in den DataFrames in Kleinbuchstaben umwandeln
+# Aenderungen für Crimes_Dataset
+# Alle Zeichenfolgen in den DataFrame in Kleinbuchstaben umwandeln
 crimes_df = crimes_dataset.applymap(lambda x: x.lower() if isinstance(x, str) else x)
-suspects_df = suspect_dataset.applymap(lambda x: x.lower() if isinstance(x, str) else x)
 
-# Filterungsprozess
-crimes_filtered_evidence = crimes_dataset.dropna(subset=['Evidence Found']) # Loescht alle Eintraege in Evidence Found, die keinen Eintrag haben
-village_day_df = village_df[village_df['Time of Day'] == 'day'] # Loescht alle Eintraege in Time of Day, die nicht 'day' sind
-suspects_filtered = suspects_df[~suspects_df.isin(['sunlight']).any(axis=1)] # Löschen aller Zeilen, in denen "sunlight" vorkommt
-# Anzahl der Zeilen ermitteln, in denen "sunlight" vorkommt
-sunlight_count = suspects_filtered.isin(['sunlight']).any(axis=1).sum()
+# Filterungsprozess für Crimes_Dataset
+crimes_evidence = crimes_dataset.dropna(subset=['Evidence Found'])  # Loescht alle Einträge in Evidence Found, die keinen Eintrag haben
+crimes_evidence_day = crimes_evidence[crimes_evidence['Time of Day'] == 'day']  # Speichert nur die Werte, in denen in der Kategorie "Time of Day" == 'day' sind
 
 # Behalten nur der Zeilen, in denen die Region "village" ist
-village_df = crimes_df[crimes_df['Region'] == 'village']
-crime_weapon = village_df[village_df['Crime Weapon'] == 'knife']
-print(crime_weapon)
-#print(suspects_filtered)
+crimes_evidence_day_region = crimes_evidence_day[crimes_evidence_day['Region'] == 'village']
+crimes_evidence_day_region_weapon = crimes_evidence_day_region[crimes_evidence_day_region['Crime Weapon'] == 'knife']
+
+
+
+# Aenderungen fuer Suspects_Dataset
+# Alle Zeichenfolgen in den DataFrame in Kleinbuchstaben umwandeln
+suspects_df = suspect_dataset.applymap(lambda x: x.lower() if isinstance(x, str) else x)
+
+# Filterungsprozess fuer Suspects_Dataset
+suspects_sunlight_ = suspects_df[~suspects_df.isin(['sunlight']).any(axis=1)]  # Loeschen aller Zeilen, in denen "sunlight" vorkommt
+
 
 
 
