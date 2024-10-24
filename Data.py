@@ -27,8 +27,7 @@ crimes_filtered = crimes_dataset[
     (crimes_dataset['Crime Type'] == 'kidnapping')
 ]
 
-
-
+print(crimes_filtered)
 # Aenderungen fuer Suspects_Dataset
 # Alle Zeichenfolgen in den DataFrame in Kleinbuchstaben umwandeln
 suspects_df = suspect_dataset.applymap(lambda x: x.lower() if isinstance(x, str) else x)
@@ -39,32 +38,19 @@ suspects_sunlight = suspects_df[~suspects_df.isin(['sunlight']).any(axis=1)]  # 
 witch_suspects = suspects_sunlight[suspects_sunlight['Monster'] == 'witch']
 # Filtern des witch_suspects nach "Witch" welche eine kriminelle Historie haben
 witch_suspects_criminalhistory = witch_suspects[witch_suspects['Criminal record'] == 'yes']
+# Filtern der Hexen, die stark und schnell sind
+potential_witch = witch_suspects_criminalhistory[
+    (witch_suspects_criminalhistory['Strength Level'] > 5) &
+    (witch_suspects_criminalhistory['Speed Level'] > 30) &
+    (witch_suspects_criminalhistory['Favorite Food'] == 'humans') &
+    (witch_suspects_criminalhistory['Age'] >= 300) &
+    (witch_suspects_criminalhistory['Age'] <= 500)
+]
 
+potential_witch.to_csv('potential_witch_dataset.csv', index=False)
 
-# Plot: Verteilung der Altersgruppen von Hexen mit krimineller Vorgeschichte
-plt.figure(figsize=(10, 6))
-sns.histplot(witch_suspects_criminalhistory['Age'], bins=20, kde=True)
-plt.title('Verteilung des Alters von Hexen mit krimineller Vorgeschichte')
-plt.xlabel('Alter')
-plt.ylabel('Anzahl')
-plt.show()
+# Filter für Verbrechen, die am 30.10.2024 stattfanden
+crime_on_specific_date = crimes_dataset[crimes_dataset['Date'] == '2024-10-30']
 
-# Plot: Stärkenlevel der Hexen mit krimineller Vorgeschichte
-plt.figure(figsize=(10, 6))
-sns.countplot(data=witch_suspects_criminalhistory, x='Strength Level')
-plt.title('Stärkenlevel der Hexen mit krimineller Vorgeschichte')
-plt.xlabel('Stärkenlevel')
-plt.ylabel('Anzahl')
-plt.show()
-
-# Plot: Allergien der Hexen mit krimineller Vorgeschichte
-plt.figure(figsize=(10, 6))
-sns.countplot(data=witch_suspects_criminalhistory, x='Allergy')
-plt.title('Allergien der Hexen mit krimineller Vorgeschichte')
-plt.xlabel('Allergie')
-plt.ylabel('Anzahl')
-plt.xticks(rotation=45)
-plt.show()
-
-
-
+# Ausgabe der Verbrechen, die an diesem Datum stattfanden
+crime_on_specific_date.to_csv('Verbrechen_am_30102024.csv', index=False)

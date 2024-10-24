@@ -5190,7 +5190,8 @@ Index_Crimes,Date,Monster involved,Days of Investigation,Region,Crime Type,Crime
 7695,2022-11-26,Ghost,98.0,castle,vandalism,brute force,night,potions
 4870,2022-11-22,Zombie,82.0,mountain,assault,pistol,dawn,potions
 630,2020-06-08,Vampire,61.0,castle,nightly disturbance,N/A,night,blood
-8477,2022-12-09,Skeleton,38.0,castle,nightly disturbance,axe,night,bones
+
+,2022-12-09,Skeleton,38.0,castle,nightly disturbance,axe,night,bones
 5287,2020-06-07,Ghost,82.0,castle,vandalism,knife,night,cloak
 6795,2023-04-20,Ghost,9.0,castle,vandalism,brute force,night,cloak
 5131,2024-05-27,Zombie,64.0,forest,kidnapping,brute force,night,blood
