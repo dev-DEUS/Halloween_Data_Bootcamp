@@ -1,0 +1,16 @@
+Index_ID,Date,Monster involved,Days of Investigation,Region,Crime Type,Crime Weapon,Time of Day,Evidence Found,Monster,Criminal record,Age,Gender,Height in cm,Speed Level,Strength Level,Allergy,Favorite Food,Predicted Monster
+336,2023-11-29,4,14.0,village,kidnapping,knife,day,bones,Witch,No,638.0,F,189.0,21.0,2.0,hazelnut,lasagna,Witch
+337,2021-09-23,4,71.0,village,arson,knife,day,bones,Witch,No,362.0,F,182.0,18.0,1.0,hazelnut,humans,Witch
+958,2021-11-23,4,85.0,village,arson,knife,day,bones,Witch,Yes,417.0,F,192.0,23.0,5.0,hazelnut,pesto pasta,Witch
+1248,2024-03-30,4,8.0,village,kidnapping,knife,day,bones,Witch,No,766.0,M,153.0,23.0,3.0,hazelnut,rats,Skeleton
+2437,2021-11-28,4,21.0,village,arson,knife,day,bones,Witch,Yes,343.0,M,191.0,24.0,4.0,hazelnut,rats,Witch
+3617,2024-05-06,4,36.0,village,kidnapping,knife,day,bones,Witch,No,63.0,M,185.0,18.0,2.0,hazelnut,lasagna,Zombie
+5196,2021-02-25,4,57.0,village,arson,knife,day,bones,Witch,no,390.0,F,196.0,22.0,8.0,hazelnut,lasagna,Witch
+5809,2023-07-13,4,62.0,village,theft,knife,day,bones,Witch,Yes,361.0,F,170.0,14.0,3.0,hazelnut,pesto pasta,Witch
+6214,2023-10-11,4,22.0,village,kidnapping,knife,day,bones,Witch,Yes,559.0,M,178.0,16.0,9.0,hazelnut,humans,Witch
+6983,2022-12-31,5,66.0,village,assault,knife,day,bones,Zombie,No,85.0,M,176.0,12.0,1.0,cat hair,brain,Zombie
+8109,2023-06-03,5,54.0,village,murder,knife,day,bones,Zombie,No,155.0,M,187.0,18.0,4.0,cat hair,brain,Zombie
+8577,2023-04-06,4,87.0,VILLAGE,kidnapping,knife,day,bones,Witch,No,204.0,F,162.0,21.0,1.0,garlic,brain,Witch
+9188,2020-11-27,4,81.0,village,kidnapping,knife,day,bones,Witch,Yes,485.0,F,199.0,21.0,1.0,hazelnut,lasagna,Witch
+9394,2024-01-23,4,60.0,village,kidnapping,knife,day,bones,Witch,No,607.0,M,197.0,16.0,4.0,hazelnut,rats,Witch
+9943,2022-10-27,5,15.0,village,assault,knife,day,bones,Zombie,Yes,106.0,M,190.0,21.0,6.0,silver,rats,Zombie
