@@ -58,6 +58,9 @@ model.compile(loss='sparse_categorical_crossentropy', optimizer='adam', metrics=
 # Train the model and visualize training history
 history = model.fit(X_train, y_train, epochs=50, batch_size=32, validation_data=(X_test, y_test))
 
+# Save the model
+model.save('Classifier_model.keras')
+
 # Plot the training and validation accuracy and loss
 plt.figure(figsize=(12, 5))
 
@@ -106,3 +109,4 @@ os.chdir(os.path.dirname(__file__))
 
 # Speichern der CSV im selben Ordner wie das Skript
 filtered_crimes.to_csv('predicted_monsters_all_features.csv', index=False)
+
